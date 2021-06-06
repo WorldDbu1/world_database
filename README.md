@@ -59,8 +59,14 @@ make 2k
 
 
 ## 运行矿工
+
 ./lotus-miner run --nosync
 
 
 ## 查看地址
+
 ./lotus net listen
+
+## 加入主节点
+
+./lotus net connect /ip4/***.***.***.***/tcp/****/p2p/****
