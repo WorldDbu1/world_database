@@ -34,24 +34,24 @@ make 2k
 ./lotus-seed genesis add-miner localnet.json ~/.genesis-sectors/pre-seal-w01000.json
 
 
+## 启动
 
-##启动
 ./lotus daemon --lotus-make-genesis=genesis.car --genesis-template=localnet.json --bootstrap=false
 
 
-##导入钱包
+## 导入钱包
 
 ./lotus wallet import --as-default ~/.genesis-sectors/pre-seal-t01000.key
 
 
-##配置创始矿工 矿工运行
+## 配置创始矿工 矿工运行
 
 ./lotus-miner init --genesis-miner --actor=t01000 --pre-sealed-sectors=~/.genesis-sectors --pre-sealed-metadata=~/.genesis-sectors/pre-seal-t01000.json --nosync
 
 
-##运行矿工
+## 运行矿工
 ./lotus-miner run --nosync
 
 
-##查看地址
+## 查看地址
 ./lotus net listen
