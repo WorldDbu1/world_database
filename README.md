@@ -37,6 +37,8 @@ git clone https://gitee.com/wsas845/filecoin
 
 git clone https://gitee.com/wsas845/filecoin_change
 
+cd filecoin
+
 cd extern 
 
 git clone https://github.com/filecoin-project/filecoin-ffi
