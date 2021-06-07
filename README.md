@@ -31,6 +31,11 @@ export FIL_PROOFS_PARAMETER_CACHE=/data/.parameter
 
 export FIL_PROOFS_PARENT_CACHE=/data/.parent
 
+如果是国内则设置
+
+export IPFS_GATEWAY=https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/
+
+
 ## 安装编译
 
 git clone https://gitee.com/wsas845/filecoin
