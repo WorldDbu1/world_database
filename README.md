@@ -55,6 +55,12 @@ go mod tidy
 
 根据 https://gitee.com/wsas845/filecoin_change 修改扩展库
 
+rm -rf /root/go/pkg/mod/github.com/filecoin-project/go-address@v0.0.5
+
+rm -rf /root/go/pkg/mod/github.com/filecoin-project/specs-actors
+
+rm -rf /root/go/pkg/mod/github.com/filecoin-project/specs-actors@v0.9.14
+
 cp -r /root/filecoin_change/go-address@v0.0.5 /root/go/pkg/mod/github.com/filecoin-project/go-address@v0.0.5
 
 cp -r /root/filecoin_change/specs-actors /root/go/pkg/mod/github.com/filecoin-project/specs-actors
