@@ -25,12 +25,6 @@ export FIL_PROOFS_PARENT_CACHE=/data/.parent
 
 ## 安装编译
 
-go clean -modcache
-
-go mod tidy  
-
-根据 https://gitee.com/wsas845/filecoin_change 修改扩展库
-
 cd extern 
 
 git clone https://github.com/filecoin-project/filecoin-ffi
@@ -38,6 +32,14 @@ git clone https://github.com/filecoin-project/filecoin-ffi
 git clone https://github.com/filecoin-project/serialization-vectors
 
 git clone https://github.com/filecoin-project/test-vectors
+
+cd ../
+
+go clean -modcache
+
+go mod tidy  
+
+根据 https://gitee.com/wsas845/filecoin_change 修改扩展库
 
 make 2k
 
