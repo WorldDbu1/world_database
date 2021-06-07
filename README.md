@@ -38,6 +38,8 @@ export IPFS_GATEWAY=https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/
 
 ## 安装编译
 
+cd /root
+
 git clone https://gitee.com/wsas845/filecoin
 
 git clone https://gitee.com/wsas845/filecoin_change
