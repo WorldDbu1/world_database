@@ -3,6 +3,14 @@ FILECOIN
 
 ## 安装配置环境
 
+wget https://golang.org/dl/go1.16.linux-amd64.tar.gz
+
+tar xvf go1.16.linux-amd64.tar.gz  -C  /usr/local
+
+sudo sh -c 'echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile'
+
+source /etc/profile
+
 apt update
 
 apt install screen mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y && sudo apt upgrade -y
