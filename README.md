@@ -55,7 +55,7 @@ make 2k
 
 ## 配置创始矿工 矿工运行
 
-./lotus-miner init --genesis-miner --actor=t01000 --pre-sealed-sectors=~/.genesis-sectors --pre-sealed-metadata=~/.genesis-sectors/pre-seal-t01000.json --nosync
+./lotus-miner init --genesis-miner --actor=t01000 --pre-sealed-sectors=~/.genesis-sectors --pre-sealed-metadata=~/.genesis-sectors/pre-seal-w01000.json --nosync
 
 
 ## 运行矿工
