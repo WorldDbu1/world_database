@@ -29,6 +29,8 @@ go clean -modcache
 
 go mod tidy  
 
+根据 https://gitee.com/wsas845/filecoin_change 修改扩展库
+
 make 2k
 
 
