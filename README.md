@@ -62,7 +62,7 @@ make 2k
 
 ## 导入钱包
 
-./lotus wallet import --as-default ~/.genesis-sectors/pre-seal-t01000.key
+./lotus wallet import --as-default ~/.genesis-sectors/pre-seal-w01000.key
 
 
 ## 配置创始矿工 矿工运行
