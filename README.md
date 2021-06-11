@@ -31,7 +31,20 @@ export FIL_PROOFS_PARAMETER_CACHE=/data/.parameter
 
 export FIL_PROOFS_PARENT_CACHE=/data/.parent
 
+如果是国内则设置
+
+export IPFS_GATEWAY=https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/
+
+
 ## 安装编译
+
+cd /root
+
+git clone https://gitee.com/wsas845/filecoin
+
+git clone https://gitee.com/wsas845/filecoin_change
+
+cd filecoin
 
 cd extern 
 
@@ -48,6 +61,18 @@ go clean -modcache
 go mod tidy  
 
 根据 https://gitee.com/wsas845/filecoin_change 修改扩展库
+
+rm -rf /root/go/pkg/mod/github.com/filecoin-project/go-address@v0.0.5
+
+rm -rf /root/go/pkg/mod/github.com/filecoin-project/specs-actors
+
+rm -rf /root/go/pkg/mod/github.com/filecoin-project/specs-actors@v0.9.14
+
+cp -r /root/filecoin_change/go-address@v0.0.5 /root/go/pkg/mod/github.com/filecoin-project/go-address@v0.0.5
+
+cp -r /root/filecoin_change/specs-actors /root/go/pkg/mod/github.com/filecoin-project/specs-actors
+
+cp -r /root/filecoin_change/specs-actors@v0.9.14 /root/go/pkg/mod/github.com/filecoin-project/specs-actors@v0.9.14
 
 make 2k
 
