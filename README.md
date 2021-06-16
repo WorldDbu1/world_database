@@ -1,7 +1,6 @@
-FILECOIN
+World Batabase
 
-
-## 安装配置环境
+## Installation and configuration environment
 
 wget https://golang.org/dl/go1.16.linux-amd64.tar.gz
 
@@ -21,7 +20,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
 
 
-## 设置环境变量
+## Set environment variables
 
 export FFI_BUILD_FROM_SOURCE=1 
 
@@ -31,18 +30,18 @@ export FIL_PROOFS_PARAMETER_CACHE=/data/.parameter
 
 export FIL_PROOFS_PARENT_CACHE=/data/.parent
 
-如果是国内则设置
+# if run in china
 
 export IPFS_GATEWAY=https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/
 
 
-## 安装编译
+## Install and compile
 
 cd /root
 
-git clone https://gitee.com/wsas845/filecoin
+git clone https://github.com/WorldDbu1/world_database
 
-git clone https://gitee.com/wsas845/filecoin_change
+git clone https://github.com/WorldDbu1/world_database_change
 
 cd filecoin
 
@@ -60,7 +59,7 @@ go clean -modcache
 
 go mod tidy  
 
-根据 https://gitee.com/wsas845/filecoin_change 修改扩展库
+## Modify the extension library
 
 rm -rf /root/go/pkg/mod/github.com/filecoin-project/go-address@v0.0.5
 
@@ -77,7 +76,7 @@ cp -r /root/filecoin_change/specs-actors@v0.9.14 /root/go/pkg/mod/github.com/fil
 make 2k
 
 
-## 编译后
+## Compilation is complete
 
 ./lotus fetch-params 536870912
 
@@ -88,30 +87,30 @@ make 2k
 ./lotus-seed genesis add-miner localnet.json ~/.genesis-sectors/pre-seal-w01000.json
 
 
-## 启动
+## start up
 
 ./lotus daemon --lotus-make-genesis=genesis.car --genesis-template=localnet.json --bootstrap=false
 
 
-## 导入钱包
+## Import wallet
 
 ./lotus wallet import --as-default ~/.genesis-sectors/pre-seal-w01000.key
 
 
-## 配置创始矿工 矿工运行
+## Configure founding miner miner operation
 
 ./lotus-miner init --genesis-miner --actor=w01000 --pre-sealed-sectors=/root/.genesis-sectors --pre-sealed-metadata=/root/.genesis-sectors/pre-seal-w01000.json --nosync
 
 
-## 运行矿工
+## Run miner
 
 ./lotus-miner run --nosync
 
 
-## 查看地址
+## View address
 
 ./lotus net listen
 
-## 加入主节点
+## Join the master node
 
 ./lotus net connect /ip4/***.***.***.***/tcp/****/p2p/****
